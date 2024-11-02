@@ -1,0 +1,151 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+    margin: 0;
+}
+
+body {
+    /* 3. Add accessible line-height */
+    line-height: 1.1;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    /* font-family: 'Satoshi', sans-serif; */
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+    isolation: isolate;
+}
+
+.main-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 8rem 16rem 0 16rem;
+    gap: 2rem;
+    /* border: 3px solid black; */
+}
+
+
+/* slot machine stuff */
+.slot-machine {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    width: 10rem;
+    height: 1.3em;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    /* margin-top: 8px; */
+}
+
+.slot-machine .text-1,
+.slot-machine .text-2 {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.slot-machine:hover .text-1 {
+    transform: translateY(-100%);
+}
+
+.slot-machine:hover .text-2 {
+    transform: translateY(0);
+}
+
+
+.slot-machine .text-1 {
+    transform: translateY(0);
+}
+
+.slot-machine .text-2 {
+    transform: translateY(100%);
+}
+
+
+
+
+/* Video Stuff */
+.video-container {
+    display: flex;
+    border-radius: 7px;
+    overflow: hidden;
+    margin: 0.5rem;
+    gap: 0.5rem;
+}
+
+.embedded-video {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* project stuff */
+
+/* footer stuff */
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin-top: 4rem;
+    /* border-top: 1px solid #e9ecef; */
+}
