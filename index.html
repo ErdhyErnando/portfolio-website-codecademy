@@ -2,74 +2,79 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet"> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
     <title>Portfolio Website | Codecademy</title>
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/style.css" />
 </head>
 
 <body>
-    <main class="main-div">
-        <div class="slot-machine">
-            <p class="text-1">Erdhy Ernando Davis</p>
-            <p class="text-2">dhy.</p>
-        </div>
-        <div class="description">
-            <p class="short-description">👋 Hi, I'm Erdhy — an electrical engineering student with a passion for
-                creating. From <a href="https://www.instagram.com/namlapanstudios/">video production</a> to web
-                development, I'm driven to learn and bring ideas to life.
-                Right now, I'm diving deep into coding to expand my skills as a future web developer</p>
-        </div>
-        <div class="video-list">
-            <p>videos i made:</p>
-            <div class="video-container">
-                <iframe width="320" height="180" class="embedded-video"
-                    src="https://www.youtube.com/embed/mP6tPaHUyUk?si=rC9Zu8gb3WhGo48G" title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <iframe width="320" height="180" class="embedded-video"
-                    src="https://www.youtube.com/embed/ma6_MFRRdC8?si=2XHoxdMJe0lLpDM2" title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <iframe width="320" height="180" class="embedded-video src="
-                    https://www.youtube.com/embed/AbrMQqc2B-4?si=U_RdEtxTxlnpCsa9" title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-        </div>
-        <div class="project-list">
-            <p>projects i made:</p>
-            <div class="project-container">
-                <div class="project">
-                    <img src="https://content.codecademy.com/courses/learn-html/projects/portfolio-website/colmar-academy.png"
-                        alt="Colmar Academy">
-                    <p>Colmar Academy</p>
-                </div>
-                <div class="project">
-                    <img src="https://content.codecademy.com/courses/learn-html/projects/portfolio-website/teacozy.png"
-                        alt="Tea Cozy">
-                    <p>Tea Cozy</p>
-                </div>
-                <div class="project">
-                    <img src="https://content.codecademy.com/courses/learn-html/projects/portfolio-website/healthy-recipes.png"
-                        alt="Healthy Recipes">
-                    <p>Healthy Recipes</p>
-                </div>
-            </div>
-        </div>
-        <footer class="footer-container">
-            <p>made with ❤️ by <a href="https://x.com/erdhyernando">erdhy</a></p>
-        </footer>
-    </main>
+    <div class="outer-div">
+        <main class="main-div">
+            <!-- slot machine header -->
+            <h1 class="slot-machine">
+                <span class="text-1">Erdhy Ernando Davis</span>
+                <span class="text-2">dhy.</span>
+            </h1>
 
+            <!-- description div -->
+            <div class="description">
+                <p class="short-description">
+                    I'm an electrical engineering student with a passion for creating.
+                    From
+                    <a href="https://www.instagram.com/namlapanstudios/">video production</a>
+                    to web development. I also love photography, making videos, and
+                    <a href="https://www.instagram.com/neraaventour/">exploring new places</a>. Right now, I'm diving
+                    deep into coding to expand my skills as a
+                    future developer.
+                </p>
+            </div>
+
+            <!-- video list div -->
+            <section class="video-list">
+                <p>videos i made:</p>
+                <div class="video-container">
+                    <iframe width="320" height="180" class="embedded-video"
+                        src="https://www.youtube.com/embed/mP6tPaHUyUk?si=rC9Zu8gb3WhGo48G" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="320" height="180" class="embedded-video"
+                        src="https://www.youtube.com/embed/ma6_MFRRdC8?si=2XHoxdMJe0lLpDM2" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <!-- project list div -->
+            <section class="project-list">
+                <p>projects i made and working on:</p>
+                <div class="project-container">
+                    <ul class="list-of-projects">
+                        <li>
+                            <a href="https://www.instagram.com/namlapanstudios/">Namlapan Studios</a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/neraaventour/">Neraaventour</a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/erdhyernando/">Erdhy Ernando</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+        <!-- footer div -->
+        <footer class="footer-container">
+            <p>made with ❤️ & ⚡ by <a href="https://x.com/erdhyernando">erdhy</a></p>
+        </footer>
+    </div>
 </body>
 
 </html>
