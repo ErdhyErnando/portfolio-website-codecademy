@@ -139,7 +139,7 @@ a:hover::after {
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    margin: 0.1rem 0 0.5rem 0;
+    margin: 0;
 }
 
 .slot-machine .text-1,
@@ -217,8 +217,8 @@ a:hover::after {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    padding: 4rem auto 0 auto;
-    margin-top: 6rem;
+    padding: 2rem auto 0 auto;
+    margin-top: 2rem;
     color: lightgray;
     /* border-top: 1px solid #e9ecef; */
 }
@@ -228,7 +228,7 @@ a:hover::after {
 
 }
 
-..footer-container a:hover {
+.footer-container a:hover {
     color: #FF9900;
 }
 
@@ -258,5 +258,101 @@ a:hover::after {
     .video-container {
         grid-template-columns: 1fr;
         /* Force single column on very small screens */
+    }
+}
+
+/* Add these styles for the download button */
+.cv-download {
+    margin: 0;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    background-color: #FF9900;
+    color: white;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+}
+
+.download-button:hover {
+    background-color: #e38902;
+    transform: translateY(-2px);
+}
+
+.download-button:hover::after {
+    /* Remove default link hover effect */
+    display: none;
+}
+
+.download-button svg {
+    width: 0.9rem;
+    height: 0.9rem;
+}
+
+/* Add this to your existing media queries if needed */
+@media screen and (max-width: 480px) {
+    .download-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Add these styles and modify existing ones */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.1rem 0 0.5rem 0;
+}
+
+.cv-download {
+    position: relative;
+}
+
+.cv-download:hover::before {
+    display: none;
+    /* Hide by default, show only in mobile */
+    content: attr(title);
+    position: absolute;
+    bottom: -25px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+/* Update media queries */
+@media screen and (max-width: 768px) {
+    .button-text {
+        display: none;
+    }
+
+    .download-button {
+        padding: 0.5rem;
+        border-radius: 40px;
+    }
+
+    .cv-download:hover::before {
+        display: block;
+        /* Show tooltip on mobile */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header-container {
+        gap: 0.5rem;
+    }
+
+    .download-button svg {
+        width: 1.2rem;
+        height: 1.2rem;
     }
 }
