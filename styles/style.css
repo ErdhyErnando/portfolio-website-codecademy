@@ -52,7 +52,6 @@ h6 {
 /* p {
     /* text-wrap: pretty; */
 
-
 */ h1,
 h2,
 h3,
@@ -329,6 +328,31 @@ a:hover::after {
     white-space: nowrap;
 }
 
+.header-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.social-button:hover {
+    background: rgba(255, 153, 0, 0.1);
+}
+
+.social-button svg {
+    color: #FF9900;
+}
+
+
 /* Update media queries */
 @media screen and (max-width: 768px) {
     .button-text {
@@ -351,8 +375,12 @@ a:hover::after {
         gap: 0.5rem;
     }
 
+    .header-buttons {
+        gap: 0.2rem;
+    }
+
     .download-button svg {
-        width: 1.2rem;
-        height: 1.2rem;
+        width: 1.1rem;
+        height: 1.1rem;
     }
 }
