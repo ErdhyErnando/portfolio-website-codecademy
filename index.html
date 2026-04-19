@@ -1,210 +1,426 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Added meta tags for SEO and social sharing -->
+        <meta
+            name="description"
+            content="Portfolio of Erdhy Ernando, an electrical engineering student passionate about video production, web development, photography, and coding. Explore projects like Ohmwerk, Quickthumb, and more."
+        />
+        <meta
+            name="keywords"
+            content="Erdhy Ernando, portfolio, electrical engineering, web development, video production, photography, coding, projects"
+        />
+        <meta name="author" content="Erdhy Ernando" />
+        <meta name="robots" content="index, follow" />
+        <!-- Open Graph tags for social media sharing -->
+        <meta property="og:title" content="Erdhy Ernando's Portfolio Website" />
+        <meta
+            property="og:description"
+            content="Discover the work of Erdhy Ernando: electrical engineering student, creator in video production, web dev, and more. View projects and download CV."
+        />
+        <meta
+            property="og:image"
+            content="https://erdhyernando.xyz/public/android-chrome-512x512.png"
+        />
+        <!-- Replace with your actual image URL -->
+        <meta property="og:url" content="https://erdhyernando.xyz" />
+        <meta property="og:type" content="website" />
+        <!-- Twitter Card tags -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Erdhy Ernando's Portfolio Website"
+        />
+        <meta
+            name="twitter:description"
+            content="Portfolio of Erdhy Ernando: engineering, coding, and creative projects."
+        />
+        <meta
+            name="twitter:image"
+            content="https://erdhyernando.xyz/public/android-chrome-512x512.png"
+        />
+        <!-- Replace with your actual image URL -->
+        <!-- <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet"> -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+            rel="stylesheet"
+        />
+        <title>Erdhy Ernando's Portfolio Website</title>
+        <link rel="stylesheet" href="styles/style.css" />
+        <link rel="stylesheet" href="styles/modal.css" />
+        <link rel="icon" href="public/favicon.ico" type="image/x-icon" />
+        <link
+            rel="apple-touch-icon"
+            sizes="192x192"
+            href="public/android-chrome-192x192.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="512x512"
+            href="public/android-chrome-512x512.png"
+        />
+        <link rel="manifest" href="public/site.webmanifest" />
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Added meta tags for SEO and social sharing -->
-    <meta name="description"
-        content="Portfolio of Erdhy Ernando, an electrical engineering student passionate about video production, web development, photography, and coding. Explore projects like Ohmwerk, Quickthumb, and more." />
-    <meta name="keywords"
-        content="Erdhy Ernando, portfolio, electrical engineering, web development, video production, photography, coding, projects" />
-    <meta name="author" content="Erdhy Ernando" />
-    <meta name="robots" content="index, follow" />
-    <!-- Open Graph tags for social media sharing -->
-    <meta property="og:title" content="Erdhy Ernando's Portfolio Website" />
-    <meta property="og:description"
-        content="Discover the work of Erdhy Ernando: electrical engineering student, creator in video production, web dev, and more. View projects and download CV." />
-    <meta property="og:image" content="https://erdhyernando.xyz/public/android-chrome-512x512.png" />
-    <!-- Replace with your actual image URL -->
-    <meta property="og:url" content="https://erdhyernando.xyz" />
-    <meta property="og:type" content="website" />
-    <!-- Twitter Card tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Erdhy Ernando's Portfolio Website" />
-    <meta name="twitter:description"
-        content="Portfolio of Erdhy Ernando: engineering, coding, and creative projects." />
-    <meta name="twitter:image" content="https://erdhyernando.xyz/public/android-chrome-512x512.png" />
-    <!-- Replace with your actual image URL -->
-    <!-- <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet"> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
-        rel="stylesheet" />
-    <title>Erdhy Ernando's Portfolio Website</title>
-    <link rel="stylesheet" href="styles/style.css" />
-    <link rel="stylesheet" href="styles/modal.css" />
-    <link rel="icon" href="public/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="192x192" href="public/android-chrome-192x192.png">
-    <link rel="apple-touch-icon" sizes="512x512" href="public/android-chrome-512x512.png">
-    <link rel="manifest" href="public/site.webmanifest">
-</head>
+    <body>
+        <div class="outer-div">
+            <main class="main-div">
+                <!-- slot machine header -->
+                <div class="header-container">
+                    <h1 class="slot-machine">
+                        <span class="text-1">Erdhy Ernando Davis</span>
+                        <span class="text-2">dhy.</span>
+                    </h1>
 
-<body>
-    <div class="outer-div">
-        <main class="main-div">
-            <!-- slot machine header -->
-            <div class="header-container">
-                <h1 class="slot-machine">
-                    <span class="text-1">Erdhy Ernando Davis</span>
-                    <span class="text-2">dhy.</span>
-                </h1>
-
-                <div class="header-buttons">
-                    <div class="cv-download" title="Download CV">
-                        <button class="download-button" onclick="openModal()">
-                            <span class="button-text">Download CV</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                <polyline points="7 10 12 15 17 10" />
-                                <line x1="12" y1="15" x2="12" y2="3" />
+                    <div class="header-buttons">
+                        <div class="cv-download" title="Download CV">
+                            <button
+                                class="download-button"
+                                onclick="openModal()"
+                            >
+                                <span class="button-text">Download CV</span>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <path
+                                        d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                                    />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                            </button>
+                        </div>
+                        <a
+                            href="https://github.com/ErdhyErnando"
+                            target="_blank"
+                            class="social-button github"
+                            title="GitHub Profile"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.25"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                                ></path>
                             </svg>
-                        </button>
+                        </a>
+                        <a
+                            href="https://linkedin.com/in/erdhyernando"
+                            target="_blank"
+                            class="social-button linkedin"
+                            title="LinkedIn Profile"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.25"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                                ></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
                     </div>
-                    <a href="https://github.com/ErdhyErnando" target="_blank" class="social-button github"
-                        title="GitHub Profile">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                            </path>
-                        </svg>
-                    </a>
-                    <a href="https://linkedin.com/in/erdhyernando" target="_blank" class="social-button linkedin"
-                        title="LinkedIn Profile">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
-                            </path>
-                            <rect x="2" y="9" width="4" height="12"></rect>
-                            <circle cx="4" cy="4" r="2"></circle>
-                        </svg>
-                    </a>
                 </div>
-            </div>
 
-            <!-- description div -->
-            <div class="description">
-                <p class="short-description">
-                    I'm an electrical engineering student with a passion for creating.
-                    From
-                    <a href="https://www.instagram.com/namlapanstudios/" target="_blank">video production</a>
-                    to web development. I also love <a href="popup.html">photography</a>, making videos, and
-                    <a href="https://www.instagram.com/neraaventour/" target="_blank">exploring new places</a>. Right
-                    now, I'm diving
-                    deep into coding to expand my skills as a
-                    future developer.
-                </p>
-            </div>
-
-            <!-- video list div -->
-            <section class="video-list">
-                <p>videos i made:</p>
-                <div class="video-container">
-                    <iframe class="embedded-video" src="https://www.youtube.com/embed/mP6tPaHUyUk?si=rC9Zu8gb3WhGo48G"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <iframe class="embedded-video" src="https://www.youtube.com/embed/ma6_MFRRdC8?si=2XHoxdMJe0lLpDM2"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <iframe class="embedded-video" src="https://www.youtube.com/embed/AbrMQqc2B-4?si=X4D2ouPhpv7ZrtFz"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <!-- description div -->
+                <div class="description">
+                    <p class="short-description">
+                        I'm an electrical engineering <s>student</s> graduate
+                        with a passion for creating.
+                    </p>
+                    <p class="short-description">
+                        From
+                        <a
+                            href="https://www.instagram.com/namlapanstudios/"
+                            target="_blank"
+                            >video production</a
+                        >
+                        to web development. I also love
+                        <a href="popup.html">photography</a>, making videos, and
+                        <a
+                            href="https://www.instagram.com/neraaventour/"
+                            target="_blank"
+                            >exploring new places</a
+                        >.
+                    </p>
+                    <p class="short-description">
+                        After almost 800 applications, I finally landed a role
+                        as a frontend dev at
+                        <a
+                            href="https://generio.ai"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >generio.ai</a
+                        >.
+                    </p>
+                    <p class="short-description">
+                        I documented my learnings, programming, and
+                        job-searching journey on
+                        <a
+                            href="https://www.youtube.com/@ErdhyErnando"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >YouTube,</a
+                        >
+                    </p>
+                    <p class="short-description">
+                        and have been trying to write more! checkout my blog
+                        <a
+                            href="https://blog.erdhyernando.xyz"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >here</a
+                        >.
+                    </p>
                 </div>
-            </section>
 
-            <!-- project list div -->
-            <section class="project-list">
-                <p>projects i made and working on:</p>
-                <div class="project-container">
-                    <ul class="list-of-projects">
-                        <li>
-                            <a href="https://ohmwerk.xyz" target="_blank">Ohmwerk</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/ErdhyErnando/flask-auth" target="_blank">Orthosis Web App</a>
-                        </li>
-                        <li>
-                            <a href="https://quickthumb.pages.dev/" target="_blank">Quickthumb</a>
-                        </li>
-                        <li>
-                            <a href="https://date-driven-2.vercel.app/" target="_blank">DateDriven</a>
-                        </li>
-                        <li>
-                            <a href="https://youtu.be/AbrMQqc2B-4?si=XE2PIFu-QEO0iW5N" target="_blank">Cryptocurrency
-                                Price Tracker
-                                Using ESP32</a>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <!-- footer div -->
-            <footer class="footer-container">
-                <span class="made-with">made with &#x1F496; &#x26A1; by <a
-                        href="https://x.com/erdhyernando">erdhy</a></span>
-            </footer>
-        </main>
+                <!-- video list div -->
+                <section class="video-list">
+                    <p>videos i made:</p>
+                    <div class="video-container">
+                        <iframe
+                            class="embedded-video"
+                            src="https://www.youtube.com/embed/mP6tPaHUyUk?si=rC9Zu8gb3WhGo48G"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="
+                                accelerometer;
+                                autoplay;
+                                clipboard-write;
+                                encrypted-media;
+                                gyroscope;
+                                picture-in-picture;
+                                web-share;
+                            "
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                        ></iframe>
+                        <iframe
+                            class="embedded-video"
+                            src="https://www.youtube.com/embed/5aABbBgSoVE?si=YWW6KpyFi39SnOrq"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="
+                                accelerometer;
+                                autoplay;
+                                clipboard-write;
+                                encrypted-media;
+                                gyroscope;
+                                picture-in-picture;
+                                web-share;
+                            "
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                        ></iframe>
+                        <iframe
+                            class="embedded-video"
+                            src="https://www.youtube.com/embed/AbrMQqc2B-4?si=X4D2ouPhpv7ZrtFz"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="
+                                accelerometer;
+                                autoplay;
+                                clipboard-write;
+                                encrypted-media;
+                                gyroscope;
+                                picture-in-picture;
+                                web-share;
+                            "
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                </section>
 
-    </div>
-
-    <!-- CV Selection Modal -->
-    <div id="cvModal" class="modal">
-        <div class="modal-content">
-            <h2>Select CV Type</h2>
-            <div class="cv-options">
-                <a href="assets/Engineering-CV.pdf" download class="cv-option">
-                    <span>Engineering CV</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                        <polyline points="7 10 12 15 17 10" />
-                        <line x1="12" y1="15" x2="12" y2="3" />
-                    </svg>
-                </a>
-                <a href="assets/Creative_CV.pdf" download class="cv-option">
-                    <span>Creative CV</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                        <polyline points="7 10 12 15 17 10" />
-                        <line x1="12" y1="15" x2="12" y2="3" />
-                    </svg>
-                </a>
-                <a href="assets/Design-Development-Portfolio_compressed.pdf" download class="cv-option">
-                    <span>Design & Development Portfolio</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                        <polyline points="7 10 12 15 17 10" />
-                        <line x1="12" y1="15" x2="12" y2="3" />
-                    </svg>
-                </a>
-            </div>
-            <button class="close-modal" onclick="closeModal()">×</button>
+                <!-- project list div -->
+                <section class="project-list">
+                    <p>projects i vibe-slopped and working on:</p>
+                    <div class="project-container">
+                        <ul class="list-of-projects">
+                            <li>
+                                <a
+                                    href="https://namlapan.studio"
+                                    target="_blank"
+                                >
+                                    namlapan.studio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://ohmwerk.xyz" target="_blank"
+                                    >Ohmwerk</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://github.com/ErdhyErnando/moneta"
+                                    target="_blank"
+                                >
+                                    moneta
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://github.com/ErdhyErnando/flask-auth"
+                                    target="_blank"
+                                    >Orthosis Web App</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://quickthumb.pages.dev/"
+                                    target="_blank"
+                                    >Quickthumb</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://date-driven-2.vercel.app/"
+                                    target="_blank"
+                                    >DateDriven</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://youtu.be/AbrMQqc2B-4?si=XE2PIFu-QEO0iW5N"
+                                    target="_blank"
+                                    >Cryptocurrency Price Tracker Using ESP32</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- footer div -->
+                <footer class="footer-container">
+                    <span class="made-with"
+                        >made with &#x1F496; &#x26A1; by
+                        <a href="https://x.com/erdhyernando">erdhy</a></span
+                    >
+                </footer>
+            </main>
         </div>
-    </div>
 
-    <script>
-        function openModal() {
-            document.getElementById('cvModal').style.display = 'flex';
-        }
+        <!-- CV Selection Modal -->
+        <div id="cvModal" class="modal">
+            <div class="modal-content">
+                <h2>Select CV Type</h2>
+                <div class="cv-options">
+                    <a
+                        href="assets/Engineering-CV.pdf"
+                        download
+                        class="cv-option"
+                    >
+                        <span>Engineering CV</span>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path
+                                d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                            />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                    </a>
+                    <a href="assets/Creative_CV.pdf" download class="cv-option">
+                        <span>Creative CV</span>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path
+                                d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                            />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                    </a>
+                    <a
+                        href="assets/Design-Development-Portfolio_compressed.pdf"
+                        download
+                        class="cv-option"
+                    >
+                        <span>Design & Development Portfolio</span>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path
+                                d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                            />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                    </a>
+                </div>
+                <button class="close-modal" onclick="closeModal()">×</button>
+            </div>
+        </div>
 
-        function closeModal() {
-            document.getElementById('cvModal').style.display = 'none';
-        }
-
-        window.onclick = function (event) {
-            const modal = document.getElementById('cvModal');
-            if (event.target === modal) {
-                closeModal();
+        <script>
+            function openModal() {
+                document.getElementById("cvModal").style.display = "flex";
             }
-        }
-    </script>
-</body>
 
+            function closeModal() {
+                document.getElementById("cvModal").style.display = "none";
+            }
+
+            window.onclick = function (event) {
+                const modal = document.getElementById("cvModal");
+                if (event.target === modal) {
+                    closeModal();
+                }
+            };
+        </script>
+    </body>
 </html>
