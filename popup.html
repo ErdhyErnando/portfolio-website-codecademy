@@ -4,11 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/styles/popup.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
-        rel="stylesheet" />
+    <meta name="description"
+        content="dhy.photo's pop-up gallery — portrait and apparel photography by Erdhy Ernando.">
+    <link rel="stylesheet" href="styles/popup.css">
+    <!-- Self-hosted font: same woff2 as the main page, no render-blocking Google Fonts CSS -->
+    <link rel="preload" href="public/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Gallery images come from Cloudinary; warm the connection early -->
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+    <!-- Gallery filtering scripts load from cdnjs at the end of body -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     <title>dhy-photo's Gallery</title>
 
     <link rel="icon" href="public/favicon.ico" type="image/x-icon">
@@ -33,69 +37,69 @@
 
             <div class="gallery">
                 <div class="item design">
-                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/zu5xfqwoebrk0chpe9kf"
-                        alt="">
+                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/w_800,c_limit,f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/zu5xfqwoebrk0chpe9kf"
+                        alt="" width="800" height="1200" decoding="async" fetchpriority="high">
                     <div class="overlay">
 
                     </div>
                 </div>
 
                 <div class="item design">
-                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/lycuoslwh3u0692bqb7p"
-                        alt="">
+                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/w_800,c_limit,f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/lycuoslwh3u0692bqb7p"
+                        alt="" width="800" height="1200" decoding="async">
                     <div class="overlay">
 
                     </div>
                 </div>
 
                 <div class="item design">
-                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/ef084srsgpglnpf8ramj"
-                        alt="">
+                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/w_800,c_limit,f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/ef084srsgpglnpf8ramj"
+                        alt="" width="800" height="1200" decoding="async">
                     <div class="overlay">
 
                     </div>
                 </div>
 
                 <div class="item design">
-                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/nep9wxmv2nujefafymve"
-                        alt="">
+                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/w_800,c_limit,f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/nep9wxmv2nujefafymve"
+                        alt="" width="800" height="1200" loading="lazy" decoding="async">
                     <div class="overlay">
                     </div>
                 </div>
 
                 <div class="item design">
-                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/tcyahccehrtb0hkusemb"
-                        alt="">
+                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/w_800,c_limit,f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/tcyahccehrtb0hkusemb"
+                        alt="" width="800" height="1200" loading="lazy" decoding="async">
                     <div class="overlay">
                     </div>
                 </div>
 
                 <div class="item design">
-                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/asekhi1av8zceb2yuutw"
-                        alt="">
+                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/w_800,c_limit,f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/asekhi1av8zceb2yuutw"
+                        alt="" width="800" height="1200" loading="lazy" decoding="async">
                     <div class="overlay">
                     </div>
                 </div>
 
                 <div class="item development">
-                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/vbyewvetlfv9cc8tbenh"
-                        alt="">
-                    <div class="overlay">
-
-                    </div>
-                </div>
-
-                <div class="item development">
-                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/rtljy9zclur6ukgkfy8k"
-                        alt="">
+                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/w_800,c_limit,f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/vbyewvetlfv9cc8tbenh"
+                        alt="" width="800" height="1200" loading="lazy" decoding="async">
                     <div class="overlay">
 
                     </div>
                 </div>
 
                 <div class="item development">
-                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/jeriuefaq6ubkrxc9ovl"
-                        alt="">
+                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/w_800,c_limit,f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/rtljy9zclur6ukgkfy8k"
+                        alt="" width="800" height="1200" loading="lazy" decoding="async">
+                    <div class="overlay">
+
+                    </div>
+                </div>
+
+                <div class="item development">
+                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/w_800,c_limit,f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/jeriuefaq6ubkrxc9ovl"
+                        alt="" width="800" height="1200" loading="lazy" decoding="async">
                     <div class="overlay">
 
                     </div>
@@ -103,24 +107,24 @@
 
 
                 <div class="item development">
-                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/bent54ho8whdkrdvq8o6"
-                        alt="">
+                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/w_800,c_limit,f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/bent54ho8whdkrdvq8o6"
+                        alt="" width="800" height="1000" loading="lazy" decoding="async">
                     <div class="overlay">
 
                     </div>
                 </div>
 
                 <div class="item development">
-                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/jwmpvjx95lasksmb4ydg"
-                        alt="">
+                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/w_800,c_limit,f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/jwmpvjx95lasksmb4ydg"
+                        alt="" width="800" height="1000" loading="lazy" decoding="async">
                     <div class="overlay">
 
                     </div>
                 </div>
 
                 <div class="item development">
-                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/gzz5iv9wdc6c09xo4pk9"
-                        alt="">
+                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/w_800,c_limit,f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/gzz5iv9wdc6c09xo4pk9"
+                        alt="" width="800" height="1000" loading="lazy" decoding="async">
                     <div class="overlay">
 
                     </div>
@@ -136,24 +140,24 @@
 
 
                 <div class="item design">
-                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/pukgqaxrs7jd8zp2ocvk"
-                        alt="">
+                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/w_800,c_limit,f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/pukgqaxrs7jd8zp2ocvk"
+                        alt="" width="800" height="1200" loading="lazy" decoding="async">
                     <div class="overlay">
 
                     </div>
                 </div>
 
                 <div class="item design">
-                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/vds2v2qfefx6js4hgvrj"
-                        alt="">
+                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/w_800,c_limit,f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/vds2v2qfefx6js4hgvrj"
+                        alt="" width="800" height="1200" loading="lazy" decoding="async">
                     <div class="overlay">
 
                     </div>
                 </div>
 
                 <div class="item design">
-                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/ngwsugxvz4nsupkhuico"
-                        alt="">
+                    <img src="https://res.cloudinary.com/diibkldwf/image/upload/w_800,c_limit,f_auto,q_auto/v1/temp%20photo%20gallery%20portfolio/ngwsugxvz4nsupkhuico"
+                        alt="" width="800" height="1200" loading="lazy" decoding="async">
                     <div class="overlay">
 
                     </div>
