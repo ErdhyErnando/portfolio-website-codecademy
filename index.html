@@ -26,14 +26,88 @@
         content="Portfolio of Erdhy Ernando: engineering, coding, and creative projects." />
     <meta name="twitter:image" content="https://erdhyernando.xyz/public/android-chrome-512x512.png" />
     <!-- Replace with your actual image URL -->
-    <!-- <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet"> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
-        rel="stylesheet" />
+    <!-- Self-hosted font: removes render-blocking Google Fonts CSS (~850ms saved) -->
+    <link rel="preload" href="public/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Video thumbnails are eager-loaded LCP candidates; warm the connection early -->
+    <link rel="preconnect" href="https://i.ytimg.com" />
     <title>Erdhy Ernando's Portfolio Website</title>
     <link rel="stylesheet" href="styles/style.css" />
-    <link rel="stylesheet" href="styles/modal.css" />
+    <!-- modal.css inlined: it is tiny (~1.4 KB) and inlining avoids a render-blocking request (~480ms saved) -->
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: var(--background-color, #fff);
+            padding: 2rem;
+            border-radius: 12px;
+            position: relative;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--text-color, #000);
+        }
+
+        .cv-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .cv-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            border: 1px solid var(--border-color, #ddd);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-color, #000);
+            transition: all 0.3s ease;
+        }
+
+        .cv-option:hover {
+            background-color: var(--hover-background, #f5f5f5);
+            transform: translateY(-2px);
+        }
+
+        .cv-option svg {
+            margin-left: 1rem;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-color, #000);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .close-modal:hover {
+            background-color: var(--hover-background, #f5f5f5);
+        }
+    </style>
     <link rel="icon" href="public/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" sizes="192x192" href="public/android-chrome-192x192.png" />
     <link rel="apple-touch-icon" sizes="512x512" href="public/android-chrome-512x512.png" />
@@ -52,7 +126,7 @@
 
                 <div class="header-buttons">
                     <div class="cv-download" title="Download CV">
-                        <button class="download-button" onclick="openModal()">
+                        <button class="download-button" onclick="openModal()" aria-label="Download CV">
                             <span class="button-text">Download CV</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -63,8 +137,8 @@
                             </svg>
                         </button>
                     </div>
-                    <a href="https://github.com/ErdhyErnando" target="_blank" class="social-button github"
-                        title="GitHub Profile">
+                    <a href="https://github.com/ErdhyErnando" target="_blank" rel="noopener noreferrer"
+                        class="social-button github" title="GitHub Profile" aria-label="GitHub Profile">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
                             <path
@@ -72,8 +146,8 @@
                             </path>
                         </svg>
                     </a>
-                    <a href="https://linkedin.com/in/erdhyernando" target="_blank" class="social-button linkedin"
-                        title="LinkedIn Profile">
+                    <a href="https://linkedin.com/in/erdhyernando" target="_blank" rel="noopener noreferrer"
+                        class="social-button linkedin" title="LinkedIn Profile" aria-label="LinkedIn Profile">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
@@ -93,10 +167,12 @@
                 </p>
                 <p class="short-description">
                     From
-                    <a href="https://www.instagram.com/namlapanstudios/" target="_blank">video production</a>
+                    <a href="https://www.instagram.com/namlapanstudios/" target="_blank"
+                        rel="noopener noreferrer">video production</a>
                     to web development. I also love
                     <a href="popup.html">photography</a>, making videos, and
-                    <a href="https://www.instagram.com/neraaventour/" target="_blank">exploring new places</a>.
+                    <a href="https://www.instagram.com/neraaventour/" target="_blank"
+                        rel="noopener noreferrer">exploring new places</a>.
                 </p>
                 <p class="short-description">
                     After almost 800 applications, I finally landed a role
@@ -110,8 +186,8 @@
                         rel="noopener noreferrer">YouTube,</a>
                 </p>
                 <p class="short-description">
-                    and have been trying to write more! checkout my blog
-                    <a href="https://blog.erdhyernando.xyz" target="_blank" rel="noopener noreferrer">here</a>.
+                    and have been trying to write more! checkout my
+                    <a href="https://blog.erdhyernando.xyz" target="_blank" rel="noopener noreferrer">blog</a>.
                 </p>
             </div>
 
@@ -123,68 +199,81 @@
                 </div>
                 <p class="video-heading">videos i made:</p>
                 <div class="video-container" id="videos-container">
-                    <iframe class="embedded-video" src="https://www.youtube.com/embed/mP6tPaHUyUk?si=rC9Zu8gb3WhGo48G"
-                        title="YouTube video player" frameborder="0" allow="
-                                accelerometer;
-                                autoplay;
-                                clipboard-write;
-                                encrypted-media;
-                                gyroscope;
-                                picture-in-picture;
-                                web-share;
-                            " referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <iframe class="embedded-video" src="https://www.youtube.com/embed/5aABbBgSoVE?si=YWW6KpyFi39SnOrq"
-                        title="YouTube video player" frameborder="0" allow="
-                                accelerometer;
-                                autoplay;
-                                clipboard-write;
-                                encrypted-media;
-                                gyroscope;
-                                picture-in-picture;
-                                web-share;
-                            " referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <iframe class="embedded-video" src="https://www.youtube.com/embed/AbrMQqc2B-4?si=X4D2ouPhpv7ZrtFz"
-                        title="YouTube video player" frameborder="0" allow="
-                                accelerometer;
-                                autoplay;
-                                clipboard-write;
-                                encrypted-media;
-                                gyroscope;
-                                picture-in-picture;
-                                web-share;
-                            " referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <!-- YouTube facades: only a lazy thumbnail loads upfront; the iframe is injected on click -->
+                    <button class="video-facade" type="button" data-yt-id="mP6tPaHUyUk"
+                        aria-label="Play video on YouTube">
+                        <img src="https://i.ytimg.com/vi/mP6tPaHUyUk/hqdefault.jpg" alt="" width="480" height="360"
+                            decoding="async" />
+                        <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48" aria-hidden="true"
+                            focusable="false">
+                            <path
+                                d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z"
+                                fill="#f00" />
+                            <path d="M45 24 27 14v20" fill="#fff" />
+                        </svg>
+                    </button>
+                    <button class="video-facade" type="button" data-yt-id="5aABbBgSoVE"
+                        aria-label="Play video on YouTube">
+                        <img src="https://i.ytimg.com/vi/5aABbBgSoVE/hqdefault.jpg" alt="" width="480" height="360"
+                            decoding="async" />
+                        <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48" aria-hidden="true"
+                            focusable="false">
+                            <path
+                                d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z"
+                                fill="#f00" />
+                            <path d="M45 24 27 14v20" fill="#fff" />
+                        </svg>
+                    </button>
+                    <button class="video-facade" type="button" data-yt-id="AbrMQqc2B-4"
+                        aria-label="Play video on YouTube">
+                        <img src="https://i.ytimg.com/vi/AbrMQqc2B-4/hqdefault.jpg" alt="" width="480" height="360"
+                            decoding="async" />
+                        <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48" aria-hidden="true"
+                            focusable="false">
+                            <path
+                                d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z"
+                                fill="#f00" />
+                            <path d="M45 24 27 14v20" fill="#fff" />
+                        </svg>
+                    </button>
                 </div>
                 <div class="video-container" id="streams-container" style="display: none;">
-                    <iframe class="embedded-video" src="https://www.youtube.com/embed/IKBHnaY5YOo"
-                        title="YouTube video player" frameborder="0" allow="
-                                accelerometer;
-                                autoplay;
-                                clipboard-write;
-                                encrypted-media;
-                                gyroscope;
-                                picture-in-picture;
-                                web-share;
-                            " referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <iframe class="embedded-video" src="https://www.youtube.com/embed/FFYAiemSvvo"
-                        title="YouTube video player" frameborder="0" allow="
-                                accelerometer;
-                                autoplay;
-                                clipboard-write;
-                                encrypted-media;
-                                gyroscope;
-                                picture-in-picture;
-                                web-share;
-                            " referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <iframe class="embedded-video" src="https://www.youtube.com/embed/2jdgxbIu-ug"
-                        title="YouTube video player" frameborder="0" allow="
-                                accelerometer;
-                                autoplay;
-                                clipboard-write;
-                                encrypted-media;
-                                gyroscope;
-                                picture-in-picture;
-                                web-share;
-                            " referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <button class="video-facade" type="button" data-yt-id="IKBHnaY5YOo"
+                        aria-label="Play stream on YouTube">
+                        <img src="https://i.ytimg.com/vi/IKBHnaY5YOo/hqdefault.jpg" alt="" width="480" height="360"
+                            loading="lazy" decoding="async" />
+                        <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48" aria-hidden="true"
+                            focusable="false">
+                            <path
+                                d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z"
+                                fill="#f00" />
+                            <path d="M45 24 27 14v20" fill="#fff" />
+                        </svg>
+                    </button>
+                    <button class="video-facade" type="button" data-yt-id="FFYAiemSvvo"
+                        aria-label="Play stream on YouTube">
+                        <img src="https://i.ytimg.com/vi/FFYAiemSvvo/hqdefault.jpg" alt="" width="480" height="360"
+                            loading="lazy" decoding="async" />
+                        <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48" aria-hidden="true"
+                            focusable="false">
+                            <path
+                                d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z"
+                                fill="#f00" />
+                            <path d="M45 24 27 14v20" fill="#fff" />
+                        </svg>
+                    </button>
+                    <button class="video-facade" type="button" data-yt-id="2jdgxbIu-ug"
+                        aria-label="Play stream on YouTube">
+                        <img src="https://i.ytimg.com/vi/2jdgxbIu-ug/hqdefault.jpg" alt="" width="480" height="360"
+                            loading="lazy" decoding="async" />
+                        <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48" aria-hidden="true"
+                            focusable="false">
+                            <path
+                                d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z"
+                                fill="#f00" />
+                            <path d="M45 24 27 14v20" fill="#fff" />
+                        </svg>
+                    </button>
                 </div>
             </section>
 
@@ -194,29 +283,33 @@
                 <div class="project-container">
                     <ul class="list-of-projects">
                         <li>
-                            <a href="https://namlapan.studio" target="_blank">
+                            <a href="https://namlapan.studio" target="_blank" rel="noopener noreferrer">
                                 namlapan.studio
                             </a>
                         </li>
                         <li>
-                            <a href="https://ohmwerk.xyz" target="_blank">Ohmwerk</a>
+                            <a href="https://ohmwerk.xyz" target="_blank" rel="noopener noreferrer">Ohmwerk</a>
                         </li>
                         <li>
-                            <a href="https://github.com/ErdhyErnando/moneta" target="_blank">
+                            <a href="https://github.com/ErdhyErnando/moneta" target="_blank"
+                                rel="noopener noreferrer">
                                 moneta
                             </a>
                         </li>
                         <li>
-                            <a href="https://github.com/ErdhyErnando/flask-auth" target="_blank">Orthosis Web App</a>
+                            <a href="https://github.com/ErdhyErnando/flask-auth" target="_blank"
+                                rel="noopener noreferrer">Orthosis Web App</a>
                         </li>
                         <li>
-                            <a href="https://quickthumb.pages.dev/" target="_blank">Quickthumb</a>
+                            <a href="https://quickthumb.pages.dev/" target="_blank" rel="noopener noreferrer">Quickthumb</a>
                         </li>
                         <li>
-                            <a href="https://date-driven-2.vercel.app/" target="_blank">DateDriven</a>
+                            <a href="https://date-driven-2.vercel.app/" target="_blank"
+                                rel="noopener noreferrer">DateDriven</a>
                         </li>
                         <li>
-                            <a href="https://youtu.be/AbrMQqc2B-4?si=XE2PIFu-QEO0iW5N" target="_blank">Cryptocurrency
+                            <a href="https://youtu.be/AbrMQqc2B-4?si=XE2PIFu-QEO0iW5N" target="_blank"
+                                rel="noopener noreferrer">Cryptocurrency
                                 Price Tracker Using ESP32</a>
                         </li>
                     </ul>
@@ -225,7 +318,7 @@
             <!-- footer div -->
             <footer class="footer-container">
                 <span class="made-with">made with &#x1F496; &#x26A1; by
-                    <a href="https://x.com/erdhyernando">erdhy</a></span>
+                    <a href="https://x.com/erdhyernando" rel="noopener noreferrer">erdhy</a></span>
             </footer>
         </main>
     </div>
@@ -263,7 +356,7 @@
                     </svg>
                 </a>
             </div>
-            <button class="close-modal" onclick="closeModal()">×</button>
+            <button class="close-modal" onclick="closeModal()" aria-label="Close">×</button>
         </div>
     </div>
 
@@ -307,6 +400,26 @@
                         streamsContainer.style.display = "grid";
                         heading.textContent = "stream i did:";
                     }
+                });
+            });
+        })();
+
+        // YouTube facades: inject the player iframe only when the user clicks.
+        // This avoids loading ~1.4 MB of third-party player code on page load.
+        (function () {
+            document.querySelectorAll(".video-facade").forEach(function (facade) {
+                facade.addEventListener("click", function () {
+                    var videoId = facade.getAttribute("data-yt-id");
+                    var iframe = document.createElement("iframe");
+                    iframe.className = "embedded-video";
+                    iframe.src = "https://www.youtube-nocookie.com/embed/" + videoId + "?autoplay=1";
+                    iframe.title = "YouTube video player";
+                    iframe.setAttribute("allow",
+                        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;");
+                    iframe.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+                    iframe.allowFullscreen = true;
+                    facade.replaceWith(iframe);
+                    iframe.focus();
                 });
             });
         })();
